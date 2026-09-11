@@ -37,7 +37,7 @@ AN TOÀN
 [ ] Có test/cách kiểm chứng không?
 ```
 
-→ [Chương 02](02-prompting-va-context.md), [04](04-workflow-plan-execute.md)
+→ [Chương 02](02-prompting-va-context.md), [05](05-workflow-plan-execute.md)
 
 ---
 
@@ -53,7 +53,7 @@ AN TOÀN
 
 Thứ tự subtask: **schema/model → service/logic → API/router → test**
 
-→ [Chương 04, mục 4.5](04-workflow-plan-execute.md)
+→ [Chương 05, mục 5.5](05-workflow-plan-execute.md)
 
 ---
 
@@ -68,7 +68,7 @@ Thứ tự subtask: **schema/model → service/logic → API/router → test**
 [ ] Đã trình bày cho người duyệt và CHỜ duyệt xong chưa?
 ```
 
-→ [Chương 09](09-verification-feedback-loop.md)
+→ [Chương 11](11-verification-feedback-loop.md)
 
 ---
 
@@ -94,7 +94,7 @@ Ngưỡng coverage tham khảo:
 | Bảo mật (auth, mã hoá) | ≥ 90% |
 | Utils / helpers | ≥ 70% |
 
-→ [Chương 09, mục 9.4](09-verification-feedback-loop.md)
+→ [Chương 11, mục 11.4](11-verification-feedback-loop.md)
 
 ---
 
@@ -122,7 +122,7 @@ TRẢI NGHIỆM
 [ ] Có tiêu chí không đạt → đã sửa và chụp lại
 ```
 
-→ [Chương 09, mục 9.6](09-verification-feedback-loop.md)
+→ [Chương 11, mục 11.6](11-verification-feedback-loop.md)
 
 ---
 
@@ -159,7 +159,7 @@ TRƯỚC KHI BẬT THẬT
 [ ] CÓ CÁCH BIẾT KHI NÓ THẤT BẠI      ← hay bị quên nhất
 ```
 
-→ [Chương 10](10-automation-ngoai-codebase.md)
+→ [Chương 14](14-automation-ngoai-codebase.md)
 
 ---
 
@@ -174,7 +174,7 @@ TRƯỚC KHI BẬT THẬT
 [ ] Người lạ đọc brief này có làm được không mà không hỏi thêm?
 ```
 
-→ [Chương 08, mục 8.4](08-subagents-va-song-song.md)
+→ [Chương 09, mục 9.4](09-subagents-va-song-song.md)
 
 ---
 
@@ -190,7 +190,7 @@ TRƯỚC KHI BẬT THẬT
 [ ] Đã git log TRƯỚC khi bắt đầu (để so sau)?
 ```
 
-→ [Chương 08, mục 8.7–8.8](08-subagents-va-song-song.md)
+→ [Chương 09, mục 9.7–8.09](09-subagents-va-song-song.md)
 
 ---
 
@@ -219,12 +219,79 @@ KIỂM CHỨNG
 [ ] Coverage có tụt dưới ngưỡng ở module nào không?
 ```
 
-→ [Chương 03](03-context-engineering.md), [06](06-tools-va-mcp.md),
-[07](07-hooks-va-guardrails.md), [09](09-verification-feedback-loop.md)
+→ [Chương 04](04-context-engineering.md), [07](07-tools-va-mcp.md),
+[08](08-hooks-va-guardrails.md), [11](11-verification-feedback-loop.md)
 
 ---
 
-## C.10. Khung 7 câu hỏi chọn công cụ
+## C.10. Hợp đồng yêu cầu (trước khi bắt tay)
+
+```
+[ ] MỤC TIÊU — đạt được cái gì, cho ai dùng?
+[ ] RÀNG BUỘC — không được vi phạm điều gì? (viết bằng số, không bằng từ định tính)
+[ ] ĐẦU RA — sản phẩm bàn giao gồm những gì?
+[ ] ĐIỀU KIỆN THẤT BẠI — thế nào thì coi là hỏng?   ← hay bị bỏ nhất
+[ ] Đã hỏi ngược những câu mà câu trả lời làm ĐỔI công việc chưa?
+[ ] Hợp đồng đã được người duyệt trước khi làm chưa?
+```
+
+→ [Chương 03](03-dac-ta-yeu-cau.md)
+
+---
+
+## C.11. Trước khi dùng nhiều tác nhân
+
+```
+[ ] Việc này thật sự cần nhiều góc nhìn, hay chỉ cần một tác nhân làm tốt?
+[ ] Nếu ĐỒNG THUẬN: các tác nhân có chạy độc lập, KHÔNG thấy kết quả của nhau?
+[ ] Nếu TRANH LUẬN: đã đặt số vòng tối đa và điều kiện thoát sớm chưa?
+[ ] Nếu KIỂM TRA ĐỘC LẬP: tác nhân kiểm có ngữ cảnh SẠCH không (không bị neo)?
+[ ] Đã cân nhắc chi phí: cái rẻ chạy rộng, cái đắt chạy hẹp?
+[ ] Ý kiến ngoại lệ (khác hẳn đa số) đã được kiểm chứng bằng dữ kiện chưa?
+```
+
+→ [Chương 10](10-phoi-hop-da-tac-nhan.md)
+
+---
+
+## C.12. Kiểm soát ngân sách ngữ cảnh
+
+```
+ĐO
+[ ] Đã đo mức sàn (mở phiên mới, chưa gõ gì) chưa?
+[ ] Biết khâu nào ngốn nhiều nhất trong phiên vừa rồi không?
+
+CẮT
+[ ] MCP nào tháng qua không dùng? → tắt
+[ ] CLAUDE.md có dưới ngưỡng độ dài không?
+[ ] Có đang đọc cả file trong khi chỉ cần một đoạn không?
+[ ] Việc đọc-nhiều-kết-luận-ngắn đã giao cho subagent chưa?
+
+PHÒNG
+[ ] Thông tin quan trọng đã được ghi ra FILE chưa (không chỉ nằm trong hội thoại)?
+[ ] Việc mới có đang dùng phiên cũ đã đầy ngữ cảnh không? → mở phiên mới
+```
+
+→ [Chương 12](12-kinh-te-ngu-canh.md)
+
+---
+
+## C.13. Kiểm soát chi phí mô hình
+
+```
+[ ] Đã phân loại việc thành ba nhóm rẻ / trung / mạnh chưa?
+[ ] Có việc lặp lại nào đang chạy ở mức cao hơn mức cần không?
+[ ] Có việc nào không ai ngồi đợi → chuyển sang xử lý theo lô được không?
+[ ] KHÔNG hạ mức ở: kiểm tra quan trọng, điều phối, việc chỉ làm một lần, lúc gỡ lỗi khó
+[ ] Đã ghi log token theo loại việc trước khi đổi gì chưa?
+[ ] Kết luận về mô hình có ghi NGÀY ĐO không? (mô hình đổi, kết luận hết hạn)
+```
+
+→ [Chương 13](13-kinh-te-mo-hinh.md)
+
+---
+
+## C.14. Khung 7 câu hỏi chọn công cụ
 
 ```
 1. Tôi muốn đạt kết quả gì?
@@ -236,11 +303,11 @@ KIỂM CHỨNG
 7. Không có công cụ phù hợp?           → tự xây
 ```
 
-→ [Chương 11, mục 11.7](11-chon-cong-cu-ai.md)
+→ [Chương 15, mục 15.7](15-chon-cong-cu-ai.md)
 
 ---
 
-## C.11. Ba câu hỏi tự kiểm nhanh
+## C.15. Ba câu hỏi tự kiểm nhanh
 
 Khi không có thời gian cho checklist dài, hỏi ba câu:
 
@@ -250,6 +317,6 @@ Khi không có thời gian cho checklist dài, hỏi ba câu:
 3. Nếu nó làm sai, hậu quả có hoàn tác được không? → Validation
 ```
 
-→ [Chương 01, mục 1.6](01-tu-duy-nen-tang.md)
+→ [Chương 01, mục 1.7](01-tu-duy-nen-tang.md)
 
 > Tiếp: [Phụ lục D — Thuật ngữ](D-phu-luc-thuat-ngu.md)

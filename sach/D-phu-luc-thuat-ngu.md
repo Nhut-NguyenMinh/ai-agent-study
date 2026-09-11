@@ -7,6 +7,17 @@
 
 ---
 
+### `CLAUDE.md`
+
+File ngữ cảnh dự án, được nạp tự động mọi phiên. Chứa: dự án là gì, tech stack, kiến
+trúc, quy ước, lệnh thường dùng, điều cấm.
+
+> Nguyên tắc: lời dặn lặp lại ở nhiều phiên thì thuộc về đây, không thuộc khung chat.
+
+→ [Chương 04](04-context-engineering.md), [Phụ lục A.2](A-phu-luc-cu-phap.md), [Phụ lục E](E-huong-dan-viet-claude-md.md)
+
+---
+
 ### Agent
 
 Hệ thống AI có khả năng tự khám phá, lập kế hoạch, dùng công cụ, thực hiện nhiều bước
@@ -25,7 +36,7 @@ Agent = Context + Tools + Rules + Feedback (+ Validation)
 Kỹ năng **dựng môi trường** để AI làm việc tốt, thay vì kỹ năng viết câu lệnh hay.
 Đối tượng làm việc là quy trình, không phải một câu hỏi.
 
-→ [Chương 01, mục 1.3](01-tu-duy-nen-tang.md)
+→ [Chương 01, mục 1.4](01-tu-duy-nen-tang.md)
 
 ---
 
@@ -34,18 +45,7 @@ Kỹ năng **dựng môi trường** để AI làm việc tốt, thay vì kỹ n
 Nhiều agent phối hợp và trao đổi với nhau trên một bài toán phức tạp. Tốn tài nguyên
 hơn subagent độc lập — chỉ dùng khi các nhánh việc thật sự cần trao đổi.
 
-→ [Chương 08, mục 8.9](08-subagents-va-song-song.md)
-
----
-
-### `CLAUDE.md`
-
-File ngữ cảnh dự án, được nạp tự động mọi phiên. Chứa: dự án là gì, tech stack, kiến
-trúc, quy ước, lệnh thường dùng, điều cấm.
-
-> Nguyên tắc: lời dặn lặp lại ở nhiều phiên thì thuộc về đây, không thuộc khung chat.
-
-→ [Chương 03](03-context-engineering.md), [Phụ lục A.2](A-phu-luc-cu-phap.md), [Phụ lục E](E-huong-dan-viet-claude-md.md)
+→ [Chương 09, mục 9.9](09-subagents-va-song-song.md)
 
 ---
 
@@ -67,7 +67,7 @@ tool, file đã đọc, lịch sử hội thoại.
 
 > **Context phải đủ, không phải càng nhiều càng tốt.**
 
-→ [Chương 03](03-context-engineering.md)
+→ [Chương 04](04-context-engineering.md)
 
 ---
 
@@ -76,7 +76,7 @@ tool, file đã đọc, lịch sử hội thoại.
 Kỹ năng đưa kiến thức quan trọng vào **môi trường làm việc** của AI thay vì nhắc lại
 bằng lời ở mỗi phiên.
 
-→ [Chương 03](03-context-engineering.md)
+→ [Chương 04](04-context-engineering.md)
 
 ---
 
@@ -87,7 +87,7 @@ vốn không xác định.
 
 > Quy tắc: viết được thành `if/else` thì thuộc về code, không thuộc về AI.
 
-→ [Chương 07, mục 7.7](07-hooks-va-guardrails.md), [Chương 10, mục 10.4](10-automation-ngoai-codebase.md)
+→ [Chương 08, mục 8.7](08-hooks-va-guardrails.md), [Chương 14, mục 14.4](14-automation-ngoai-codebase.md)
 
 ---
 
@@ -101,7 +101,7 @@ Viết → Chạy → Lỗi → Đọc lỗi → Phân tích → Sửa → Chạ
 
 Chỉ hoạt động khi AI **thấy được** kết quả: test, log, ảnh chụp màn hình.
 
-→ [Chương 09](09-verification-feedback-loop.md)
+→ [Chương 11](11-verification-feedback-loop.md)
 
 ---
 
@@ -110,7 +110,7 @@ Chỉ hoạt động khi AI **thấy được** kết quả: test, log, ảnh ch
 Cơ chế Git cho phép nhiều thư mục làm việc dùng chung một kho, mỗi thư mục một nhánh.
 Dùng để chạy nhiều phiên AI song song mà không giẫm chân nhau.
 
-→ [Chương 08, mục 8.6](08-subagents-va-song-song.md)
+→ [Chương 09, mục 9.6](09-subagents-va-song-song.md)
 
 ---
 
@@ -121,7 +121,28 @@ Cơ chế giữ agent trong ranh giới an toàn: luật, hook, phạm vi quyề
 > Guardrail tốt vừa chặn cái nguy hiểm vừa **mở đường cho cái an toàn** — nếu không,
 > người dùng sẽ tắt hết.
 
-→ [Chương 07](07-hooks-va-guardrails.md)
+→ [Chương 08](08-hooks-va-guardrails.md)
+
+---
+
+### Hiển thị theo nhu cầu (Progressive disclosure)
+
+Chia thông tin hai tầng: phần tóm tắt nạp sẵn, phần chi tiết chỉ nạp khi được gọi.
+Đây là lý do `description` của skill quyết định skill có được dùng hay không — nó là
+**thứ duy nhất được nạp sẵn**.
+
+→ [Chương 12, mục 12.5](12-kinh-te-ngu-canh.md)
+
+---
+
+### Hỏi ngược
+
+Để AI đặt câu hỏi làm rõ **trước khi** bắt tay, thay vì đoán. Chỉ hỏi những câu mà câu
+trả lời làm **thay đổi công việc**; câu có mặc định hợp lý thì tự quyết và nêu giả định.
+
+Lọc ba tầng: tự tra cứu → hỏi người ngồi cùng → mới hỏi lên trên.
+
+→ [Chương 03, mục 3.5](03-dac-ta-yeu-cau.md)
 
 ---
 
@@ -132,7 +153,19 @@ Script do **harness** chạy tại một thời điểm xác định trong vòng
 
 Ba yêu cầu: điều kiện hẹp và kiểm chứng được, cơ chế chống lặp, thông điệp nói rõ hậu quả.
 
-→ [Chương 07](07-hooks-va-guardrails.md), [Phụ lục A.6–A.7](A-phu-luc-cu-phap.md)
+→ [Chương 08](08-hooks-va-guardrails.md), [Phụ lục A.6–A.7](A-phu-luc-cu-phap.md)
+
+---
+
+### Hợp đồng yêu cầu
+
+Bản mô tả công việc gồm bốn phần — **mục tiêu, ràng buộc, đầu ra, điều kiện thất bại** —
+thống nhất trước khi làm và dùng làm cơ sở nghiệm thu.
+
+Trong PM-AGENT, tài liệu test (`test-doc-first`) đóng đúng vai trò này, với negative test
+case chính là điều kiện thất bại ở dạng chạy được.
+
+→ [Chương 03](03-dac-ta-yeu-cau.md)
 
 ---
 
@@ -146,7 +179,18 @@ Rủi ro vừa     → tự động + kiểm tra hợp lệ + log
 Rủi ro cao     → người phê duyệt trước khi thực thi
 ```
 
-→ [Chương 07, mục 7.9](07-hooks-va-guardrails.md)
+→ [Chương 08, mục 8.9](08-hooks-va-guardrails.md)
+
+---
+
+### Kỹ thuật tảng băng
+
+Giữ phần nổi của ngữ cảnh thật nhỏ (quy tắc, bộ nhớ, việc đang làm), phần chìm (mã
+nguồn, tài liệu, dữ liệu) chỉ chạm tới khi cần qua công cụ tìm kiếm.
+
+> Không cần đưa toàn bộ thông tin vào ngữ cảnh — chỉ cần cho AI khả năng lấy khi cần.
+
+→ [Chương 12, mục 12.3](12-kinh-te-ngu-canh.md)
 
 ---
 
@@ -158,7 +202,7 @@ schema; AI gọi được như tool có sẵn.
 > Nhiều MCP không làm agent mạnh hơn — mỗi tool thừa tốn context, tăng nhầm lẫn, tăng
 > rủi ro.
 
-→ [Chương 06](06-tools-va-mcp.md), [Phụ lục A.8](A-phu-luc-cu-phap.md)
+→ [Chương 07](07-tools-va-mcp.md), [Phụ lục A.8](A-phu-luc-cu-phap.md)
 
 ---
 
@@ -170,7 +214,29 @@ Kiến thức đọng lại từ những lần vấp, ghi thành file để dùn
 Không ghi vào memory những gì repo đã có — memory chép lại code sẽ lỗi thời và thành
 nguồn sai.
 
-→ [Chương 03, mục 3.6](03-context-engineering.md)
+→ [Chương 04, mục 4.6](04-context-engineering.md)
+
+---
+
+### Nén ngữ cảnh (Compaction)
+
+Tóm tắt lịch sử phiên thành bản cô đọng để tiếp tục làm việc khi ngữ cảnh gần đầy.
+Là **đánh đổi, không phải phép màu** — chi tiết có thể mất. Thông tin quan trọng phải
+được ghi ra file, không chỉ nằm trong hội thoại.
+
+→ [Chương 12, mục 12.7](12-kinh-te-ngu-canh.md)
+
+---
+
+### Phân tầng mô hình
+
+Chia công việc theo mức năng lực thực sự cần (rẻ / trung cấp / mạnh) thay vì dùng mô
+hình mạnh nhất cho mọi việc.
+
+Nguyên tắc: **cái rẻ chạy rộng, cái đắt chạy hẹp**. Không tiết kiệm ở khâu điều phối,
+kiểm tra việc quan trọng, hoặc lúc đang gỡ lỗi khó.
+
+→ [Chương 13](13-kinh-te-mo-hinh.md)
 
 ---
 
@@ -183,7 +249,7 @@ người duyệt.
 Mục tiêu → Khám phá → Kế hoạch → Người duyệt → Thực hiện → Kiểm chứng
 ```
 
-→ [Chương 04](04-workflow-plan-execute.md)
+→ [Chương 05](05-workflow-plan-execute.md)
 
 ---
 
@@ -206,7 +272,7 @@ làm nguồn ngữ cảnh cho routine.
 > Lịch chạy trên máy cá nhân thất bại **âm thầm** — đó mới là vấn đề, không phải việc
 > nó không chạy.
 
-→ [Chương 10, mục 10.3](10-automation-ngoai-codebase.md)
+→ [Chương 14, mục 14.3](14-automation-ngoai-codebase.md)
 
 ---
 
@@ -217,7 +283,7 @@ File luật trong `.claude/rules/`, nạp mọi phiên. Nên tách theo chủ đ
 
 Luật không có lý do sẽ bị lách ngay khi bất tiện.
 
-→ [Chương 03, mục 3.5](03-context-engineering.md), [Phụ lục A.3](A-phu-luc-cu-phap.md)
+→ [Chương 04, mục 4.5](04-context-engineering.md), [Phụ lục A.3](A-phu-luc-cu-phap.md)
 
 ---
 
@@ -226,7 +292,7 @@ Luật không có lý do sẽ bị lách ngay khi bất tiện.
 Danh sách quyền gắn vào token của agent (`task:read`, `report:write`...). Là guardrail
 **ở tầng hệ thống** — mạnh hơn lời dặn vì không thể bị quên hay thuyết phục.
 
-→ [Chương 06, mục 6.4](06-tools-va-mcp.md)
+→ [Chương 07, mục 7.4](07-tools-va-mcp.md)
 
 ---
 
@@ -240,7 +306,7 @@ các bước, đầu ra.
 Phần `description` quyết định skill có được gọi đúng lúc — nên chứa cả câu người dùng
 hay nói và câu tự phân biệt với skill gần giống.
 
-→ [Chương 05](05-skills-va-slash-commands.md), [Phụ lục A.4](A-phu-luc-cu-phap.md)
+→ [Chương 06](06-skills-va-slash-commands.md), [Phụ lục A.4](A-phu-luc-cu-phap.md)
 
 ---
 
@@ -249,7 +315,7 @@ hay nói và câu tự phân biệt với skill gần giống.
 Lối vào ngắn cho một quy trình (`/new-feature`, `/task-report`). Khác skill ở chỗ
 **người chủ động gọi**, thay vì model tự chọn.
 
-→ [Chương 05, mục 5.5](05-skills-va-slash-commands.md)
+→ [Chương 06, mục 6.5](06-skills-va-slash-commands.md)
 
 ---
 
@@ -260,7 +326,7 @@ kiểm tra và xử lý tiếp được.
 
 Trường `confidence` cho phép chuyển sang người xem khi độ tin cậy dưới ngưỡng.
 
-→ [Chương 07, mục 7.8](07-hooks-va-guardrails.md), [Chương 10, mục 10.6](10-automation-ngoai-codebase.md)
+→ [Chương 08, mục 8.8](08-hooks-va-guardrails.md), [Chương 14, mục 14.6](14-automation-ngoai-codebase.md)
 
 ---
 
@@ -272,18 +338,7 @@ Dùng để cô lập việc tốn ngữ cảnh và để có góc nhìn độc 
 > Subagent **không biết** quyết định đã chốt trong dự án — phải brief rõ, nếu không nó
 > sẽ phá.
 
-→ [Chương 08](08-subagents-va-song-song.md)
-
----
-
-### Test-first
-
-Viết và duyệt test case **trước** khi viết code.
-
-> Test viết sau chỉ chứng minh code chạy như code đã viết — không chứng minh yêu cầu
-> được đáp ứng.
-
-→ [Chương 09, mục 9.3](09-verification-feedback-loop.md)
+→ [Chương 09](09-subagents-va-song-song.md)
 
 ---
 
@@ -299,12 +354,32 @@ Là checklist để tìm chỗ bỏ sót khi kết quả lệch hướng — kh�
 
 ---
 
+### Test-first
+
+Viết và duyệt test case **trước** khi viết code.
+
+> Test viết sau chỉ chứng minh code chạy như code đã viết — không chứng minh yêu cầu
+> được đáp ứng.
+
+→ [Chương 11, mục 11.3](11-verification-feedback-loop.md)
+
+---
+
+### Tranh luận (Debate)
+
+Cho nhiều tác nhân có **vai khác nhau** phản biện lẫn nhau để lộ điểm mù, khác với
+đồng thuận (nghĩ độc lập rồi tổng hợp). Cần đặt số vòng tối đa và điều kiện thoát sớm.
+
+→ [Chương 10, mục 10.4](10-phoi-hop-da-tac-nhan.md)
+
+---
+
 ### Validation (Kiểm tra hợp lệ)
 
 Bước kiểm tra đầu ra của AI trước khi cho phép hành động thật: kiểm schema, kiểm quy
 tắc nghiệp vụ, kiểm ngưỡng tin cậy.
 
-→ [Chương 07](07-hooks-va-guardrails.md)
+→ [Chương 08](08-hooks-va-guardrails.md)
 
 ---
 
@@ -314,7 +389,7 @@ Xác nhận kết quả bằng bằng chứng chạy được, không bằng l�
 
 > "Đã xong" không phải bằng chứng. Đầu ra của lệnh mới là.
 
-→ [Chương 09](09-verification-feedback-loop.md)
+→ [Chương 11](11-verification-feedback-loop.md)
 
 ---
 
@@ -325,7 +400,61 @@ Cách xây phần mềm trong đó AI viết phần lớn code, người tập t
 
 Không có nghĩa "AI code xong là xong" — vẫn cần hiểu đủ để kiểm soát sản phẩm.
 
-→ [Chương 11, mục 11.6](11-chon-cong-cu-ai.md)
+→ [Chương 15, mục 15.6](15-chon-cong-cu-ai.md)
+
+---
+
+### Vòng lặp (Agent loop)
+
+Chu trình **Quan sát → Suy nghĩ → Hành động → Nhận kết quả → lặp lại** — thứ biến một
+mô hình trả lời thành một tác nhân làm việc. Khi thất bại, chính vòng lặp này cho phép
+đọc lỗi và thử hướng khác.
+
+→ [Chương 01, mục 1.3](01-tu-duy-nen-tang.md)
+
+---
+
+### Xử lý theo lô (Batch)
+
+Gom nhiều yêu cầu không cần kết quả tức thời rồi xử lý sau, thường rẻ hơn. Phù hợp với
+phân loại/trích xuất hàng loạt và mọi việc chạy nền không ai ngồi đợi.
+
+→ [Chương 13, mục 13.5](13-kinh-te-mo-hinh.md)
+
+---
+
+### Điều kiện thất bại
+
+Thành phần thứ tư của tiêu chí hoàn thành, và là thành phần bị bỏ quên nhiều nhất:
+**thế nào thì coi là hỏng**.
+
+Mục tiêu mô tả vùng đúng; điều kiện thất bại cắt bỏ vùng sai. Hai thứ không đối xứng —
+ranh giới sắc bao giờ cũng kiểm được dễ hơn mô tả mơ hồ.
+
+→ [Chương 03, mục 3.2](03-dac-ta-yeu-cau.md)
+
+---
+
+### Định tuyến công việc (Routing)
+
+Quyết định việc nào giao cho tác nhân/mô hình nào. Nên là **thành phần của hệ thống**
+(luật tách khỏi mã, có dự phòng, có đo lường), không phải quyết định ngẫu hứng mỗi lần.
+
+→ [Chương 10, mục 10.2](10-phoi-hop-da-tac-nhan.md), [Chương 13](13-kinh-te-mo-hinh.md)
+
+---
+
+### Đồng thuận (Consensus)
+
+Cho nhiều tác nhân giải **cùng một** bài toán một cách **độc lập**, rồi tổng hợp. Khai
+thác tính biến thiên của mô hình để mở rộng không gian lời giải.
+
+Ba loại kết quả: đồng thuận (đa số cùng hướng), khác biệt (mỗi bên một hướng), ngoại lệ
+(một bên rất khác — đáng tiền nhất và nguy hiểm nhất, bắt buộc kiểm chứng).
+
+> Chỉ hoạt động khi các tác nhân **không thấy kết quả của nhau**.
+
+→ [Chương 10, mục 10.3](10-phoi-hop-da-tac-nhan.md)
 
 ---
 
@@ -347,5 +476,12 @@ Không có nghĩa "AI code xong là xong" — vẫn cần hiểu đủ để ki�
 | Validation | Kiểm tra hợp lệ |
 | Verification | Kiểm chứng |
 | Workflow | Quy trình |
+| Consensus | Đồng thuận |
+| Debate | Tranh luận |
+| Routing | Định tuyến |
+| Progressive disclosure | Hiển thị theo nhu cầu |
+| Compaction | Nén ngữ cảnh |
+| Batch processing | Xử lý theo lô |
+| Definition of Done | Tiêu chí hoàn thành |
 
 > Về [Mục lục](README.md)

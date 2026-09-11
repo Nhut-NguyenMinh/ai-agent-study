@@ -1,10 +1,10 @@
-# Chương 08 — Subagents & chạy song song
+# Chương 09 — Subagents & chạy song song
 
-> [← Chương 07](07-hooks-va-guardrails.md) | [Mục lục](README.md) | [Chương 09 →](09-verification-feedback-loop.md)
+> [← Chương 08](08-hooks-va-guardrails.md) | [Mục lục](README.md) | [Chương 10 →](10-phoi-hop-da-tac-nhan.md)
 
 ---
 
-## 8.1. Vì sao cần chia việc
+## 9.1. Vì sao cần chia việc
 
 Một phiên làm việc có ngân sách context hữu hạn. Khi một agent phải vừa đọc mười file,
 vừa nhớ yêu cầu, vừa theo dõi kế hoạch, vừa đọc log lỗi, thì hai chuyện xảy ra:
@@ -27,7 +27,7 @@ một đoạn tóm tắt thay vì mười file.
 
 ---
 
-## 8.2. Khi nào dùng subagent
+## 9.2. Khi nào dùng subagent
 
 | Tình huống | Có nên dùng |
 |---|---|
@@ -43,7 +43,7 @@ một đoạn tóm tắt thay vì mười file.
 
 ---
 
-## 8.3. Ví dụ thật — `/auto-review` với đội chuyên gia
+## 9.3. Ví dụ thật — `/auto-review` với đội chuyên gia
 
 Skill `auto-review` của PM-AGENT là ví dụ tốt về subagent dùng đúng chỗ.
 
@@ -89,7 +89,7 @@ công cụ đắt tiền chỉ xác nhận kết luận cuối.
 
 ---
 
-## 8.4. Subagent không có ngữ cảnh của bạn
+## 9.4. Subagent không có ngữ cảnh của bạn
 
 Đây là nguồn lỗi phổ biến nhất khi giao việc cho subagent.
 
@@ -142,7 +142,7 @@ những thứ mà cả nhóm đã cân nhắc và cố tình để nguyên.
 
 ---
 
-## 8.5. Bàn giao giữa các agent
+## 9.5. Bàn giao giữa các agent
 
 Khi công việc đi qua nhiều agent hoặc nhiều công cụ, cần một tài liệu bàn giao chuẩn.
 
@@ -186,7 +186,7 @@ Hai quy tắc điền đáng chú ý:
 
 ---
 
-## 8.6. Chạy nhiều phiên song song
+## 9.6. Chạy nhiều phiên song song
 
 Khi việc đủ lớn và đủ độc lập, có thể chạy nhiều phiên cùng lúc:
 
@@ -217,7 +217,7 @@ Mỗi worktree có thư mục làm việc riêng nhưng dùng chung kho Git. Hai
 
 ---
 
-## 8.7. Kiểm tra trước khi chạy song song
+## 9.7. Kiểm tra trước khi chạy song song
 
 Chạy song song chỉ tiết kiệm thời gian khi hai việc **không đụng cùng một chỗ** và
 **không phải chờ nhau**. Kiểm điều đó *trước*, đừng phát hiện lúc đã viết nửa đường.
@@ -250,11 +250,11 @@ Nguyên tắc thứ ba đáng nhấn mạnh. Kết luận "an toàn" dựa trên
 luận nguy hiểm nhất — nó tạo cảm giác đã kiểm tra trong khi chưa.
 
 Nguyên tắc thứ tư ngăn một sai lầm hay gặp: làm song song rồi gộp vào một commit khổng
-lồ, mất hết lợi ích của [chia nhỏ commit](04-workflow-plan-execute.md).
+lồ, mất hết lợi ích của [chia nhỏ commit](05-workflow-plan-execute.md).
 
 ---
 
-## 8.8. Bẫy khi làm việc song song
+## 9.8. Bẫy khi làm việc song song
 
 > **Bẫy 1 — Phiên khác commit chồng lên thay đổi của bạn.**
 > Sự cố thật đã ghi trong PM-AGENT: repo có phiên khác đang commit song song, và thay
@@ -281,7 +281,7 @@ lồ, mất hết lợi ích của [chia nhỏ commit](04-workflow-plan-execute.
 
 ---
 
-## 8.9. Chọn hình thức: một agent, subagent, hay đội
+## 9.9. Chọn hình thức: một agent, subagent, hay đội
 
 | Tình huống | Hình thức |
 |---|---|
@@ -296,7 +296,7 @@ lồ, mất hết lợi ích của [chia nhỏ commit](04-workflow-plan-execute.
 
 ---
 
-## 8.10. Bài tập
+## 9.10. Bài tập
 
 **Bài 1 — Subagent tìm kiếm.**
 Giao cho một subagent việc: *"Tìm mọi chỗ trong dự án đang xử lý phân trang, trả về
@@ -324,4 +324,4 @@ nhau, xếp lịch nối tiếp thay vì song song.
   "chưa xác định", không kết luận "an toàn".
 - Song song ≠ gộp chung: mỗi việc vẫn giữ commit riêng, test riêng, vòng verify riêng.
 
-> Chương tiếp: [09 — Verification & Feedback loop](09-verification-feedback-loop.md)
+> Chương tiếp: [10 — Mẫu phối hợp đa tác nhân: định tuyến, đồng thuận, tranh luận](10-phoi-hop-da-tac-nhan.md)

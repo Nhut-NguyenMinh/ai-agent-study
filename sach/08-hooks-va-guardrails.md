@@ -1,10 +1,10 @@
-# Chương 07 — Hooks & Guardrails
+# Chương 08 — Hooks & Guardrails
 
-> [← Chương 06](06-tools-va-mcp.md) | [Mục lục](README.md) | [Chương 08 →](08-subagents-va-song-song.md)
+> [← Chương 07](07-tools-va-mcp.md) | [Mục lục](README.md) | [Chương 09 →](09-subagents-va-song-song.md)
 
 ---
 
-## 7.1. Vấn đề: lời dặn bị quên
+## 8.1. Vấn đề: lời dặn bị quên
 
 Bạn viết vào `CLAUDE.md`:
 
@@ -24,7 +24,7 @@ Câu trả lời: không ai cả. Đó chính là lý do hook tồn tại.
 
 ---
 
-## 7.2. Hook là gì và vì sao nó khác rule
+## 8.2. Hook là gì và vì sao nó khác rule
 
 Hook là **script do harness chạy** tại một thời điểm xác định trong vòng đời phiên
 làm việc. Nó không nằm trong ngữ cảnh, không phụ thuộc trí nhớ model, và không thể bị
@@ -49,7 +49,7 @@ khác biệt:
 
 ---
 
-## 7.3. Đăng ký hook
+## 8.3. Đăng ký hook
 
 Hook khai báo trong `.claude/settings.json`:
 
@@ -86,7 +86,7 @@ Chi tiết cú pháp đầy đủ ở [Phụ lục A](A-phu-luc-cu-phap.md).
 
 ---
 
-## 7.4. Ví dụ thật 1 — nhắc đồng bộ tài liệu (`PostToolUse`)
+## 8.4. Ví dụ thật 1 — nhắc đồng bộ tài liệu (`PostToolUse`)
 
 Hook `post-edit-doc-reminder.sh` chạy sau mỗi lần sửa file:
 
@@ -127,7 +127,7 @@ ngữ cảnh thay vì nhắc chung chung.
 
 ---
 
-## 7.5. Ví dụ thật 2 — nhắc gửi báo cáo (`Stop`)
+## 8.5. Ví dụ thật 2 — nhắc gửi báo cáo (`Stop`)
 
 Hook này tinh vi hơn, và ba quyết định thiết kế trong nó áp dụng được cho mọi hook.
 
@@ -201,7 +201,7 @@ không nói hậu quả sẽ bị coi là nghi thức.
 
 ---
 
-## 7.6. Guardrail bằng luật — ví dụ an toàn Git
+## 8.6. Guardrail bằng luật — ví dụ an toàn Git
 
 Không phải guardrail nào cũng là script. Có những ranh giới diễn đạt bằng luật thì
 đủ, miễn là luật đủ cụ thể.
@@ -260,7 +260,7 @@ sẽ tắt hết để đỡ phiền.
 
 ---
 
-## 7.7. Ranh giới: cái gì cho AI, cái gì cho hệ thống
+## 8.7. Ranh giới: cái gì cho AI, cái gì cho hệ thống
 
 Đây là nguyên tắc kiến trúc quan trọng nhất của chương, và nó áp dụng cho cả code lẫn
 automation.
@@ -299,7 +299,7 @@ cho kết quả khác nhau. Với việc phân loại email thì chấp nhận �
 
 ---
 
-## 7.8. Đầu ra có cấu trúc
+## 8.8. Đầu ra có cấu trúc
 
 Khi kết quả của AI sẽ được máy khác dùng, đừng nhận văn bản tự do.
 
@@ -325,7 +325,7 @@ xem thay vì tự động chạy tiếp.
 
 ---
 
-## 7.9. Human-in-the-loop theo mức rủi ro
+## 8.9. Human-in-the-loop theo mức rủi ro
 
 Không phải việc gì cũng nên tự động hoàn toàn. Chia theo mức độ khó hoàn tác:
 
@@ -368,7 +368,7 @@ AI đều cần làm phiền PM.
 
 ---
 
-## 7.10. Khi nào leo thang từ rule lên hook
+## 8.10. Khi nào leo thang từ rule lên hook
 
 Không phải luật nào cũng cần thành hook. Thang leo:
 
@@ -395,7 +395,7 @@ của token** — thiếu `task:assign` thì server trả 403, không cách nào
 
 ---
 
-## 7.11. Bẫy thường gặp
+## 8.11. Bẫy thường gặp
 
 > **Bẫy 1 — Hook quá ồn.**
 > Nhắc sau mỗi lượt, mỗi file. **Cách sửa:** thu hẹp điều kiện + thêm dấu mốc chống lặp.
@@ -419,7 +419,7 @@ của token** — thiếu `task:assign` thì server trả 403, không cách nào
 
 ---
 
-## 7.12. Bài tập
+## 8.12. Bài tập
 
 **Bài 1 — Tìm lời dặn hay bị quên.**
 Nhớ lại một điều bạn đã viết vào `CLAUDE.md` mà vẫn bị bỏ sót nhiều lần. Viết một hook
@@ -447,4 +447,4 @@ Nếu có ô nào bạn phân vân, thử viết nó thành `if/else` — viết
 - Đầu ra có cấu trúc + kiểm tra hợp lệ + phê duyệt theo mức rủi ro.
 - Thang leo thang: rule → skill → hook → chặn cứng ở tầng hệ thống.
 
-> Chương tiếp: [08 — Subagents & chạy song song](08-subagents-va-song-song.md)
+> Chương tiếp: [09 — Subagents & chạy song song](09-subagents-va-song-song.md)

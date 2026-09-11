@@ -1,10 +1,10 @@
-# Chương 06 — Tools & MCP
+# Chương 07 — Tools & MCP
 
-> [← Chương 05](05-skills-va-slash-commands.md) | [Mục lục](README.md) | [Chương 07 →](07-hooks-va-guardrails.md)
+> [← Chương 06](06-skills-va-slash-commands.md) | [Mục lục](README.md) | [Chương 08 →](08-hooks-va-guardrails.md)
 
 ---
 
-## 6.1. Chỉ dẫn không thay được công cụ
+## 7.1. Chỉ dẫn không thay được công cụ
 
 Một AI biết phải làm gì nhưng không làm được gì thì chỉ là cố vấn. Nó nói *"nên kiểm
 tra log"* thay vì đọc log; nói *"nên chạy test"* thay vì chạy test.
@@ -33,7 +33,7 @@ Nguyên tắc chung: **công cụ nào cho AI khả năng tự kiểm chứng th
 
 ---
 
-## 6.2. Bash tools — con đường rẻ nhất
+## 7.2. Bash tools — con đường rẻ nhất
 
 Trước khi nghĩ đến MCP, hãy nhìn lại những gì dự án đã có sẵn dưới dạng CLI.
 
@@ -68,7 +68,7 @@ Nếu một lệnh được dùng thường xuyên thì ghi vào `CLAUDE.md` đ�
 
 ---
 
-## 6.3. MCP là gì
+## 7.3. MCP là gì
 
 MCP (Model Context Protocol) là chuẩn để AI nói chuyện với hệ thống bên ngoài:
 
@@ -87,7 +87,7 @@ kết quả ngược lại.
 
 ---
 
-## 6.4. Ví dụ thật — kiến trúc agent-gateway của PM-AGENT
+## 7.4. Ví dụ thật — kiến trúc agent-gateway của PM-AGENT
 
 PM-AGENT có một MCP server tự viết (`tools/agent-gateway/`) nối Claude Code vào chính hệ
 thống quản lý dự án. Kiến trúc của nó đáng học vì nó giải quyết đúng những vấn đề mà
@@ -148,7 +148,7 @@ nhau**. Ba tool riêng lẻ tốn ba vòng và ba lần trả phí context.
 
 ---
 
-## 6.5. Chia sẻ cấu hình cho cả team
+## 7.5. Chia sẻ cấu hình cho cả team
 
 Cấu hình MCP nằm trong repo thì cả team dùng chung:
 
@@ -172,7 +172,7 @@ Cấu hình MCP nằm trong repo thì cả team dùng chung:
 > **Cảnh báo bảo mật:** ví dụ trên đã che token. Trong thực tế, file chứa token thật
 > **không được commit**. Đưa file mẫu (`.mcp.json.example`) vào repo, để giá trị thật
 > ở file bị `.gitignore`, hoặc đọc từ biến môi trường. Và như đã nói ở
-> [mục 3.8](03-context-engineering.md): đừng bao giờ đọc nguyên file này vào ngữ cảnh —
+> [mục 4.8](04-context-engineering.md): đừng bao giờ đọc nguyên file này vào ngữ cảnh —
 > trích đúng trường cần.
 
 ### Hiệu ứng lan toả
@@ -188,7 +188,7 @@ chụp màn hình và chạy test đầu-cuối mà không ai phải tự cài.
 
 ---
 
-## 6.6. Nhiều tool không đồng nghĩa mạnh hơn
+## 7.6. Nhiều tool không đồng nghĩa mạnh hơn
 
 Đây là bài học ngược trực giác quan trọng nhất của chương:
 
@@ -218,7 +218,7 @@ khai báo trong repo dự án đó.
 
 ---
 
-## 6.7. Bẫy thường gặp
+## 7.7. Bẫy thường gặp
 
 > **Bẫy 1 — Token trong file được commit.**
 > Dấu hiệu: `.mcp.json` có giá trị thật và nằm trong Git. **Cách sửa:** commit file
@@ -244,7 +244,7 @@ khai báo trong repo dự án đó.
 
 ---
 
-## 6.8. Bài tập
+## 7.8. Bài tập
 
 **Bài 1 — Kiểm kê công cụ.**
 Liệt kê mọi công cụ AI đang có quyền dùng trong dự án của bạn. Đánh dấu cái nào chưa
@@ -271,4 +271,4 @@ không đủ để biết cách sửa, hãy cải thiện thông điệp đó.
 - Cấu hình dùng chung tạo hiệu ứng lan toả: một người cấu hình, cả team hưởng.
 - **Ít tool nhưng đúng** — mỗi tool thừa tốn context, tăng nhầm lẫn và tăng rủi ro.
 
-> Chương tiếp: [07 — Hooks & Guardrails](07-hooks-va-guardrails.md)
+> Chương tiếp: [08 — Hooks & Guardrails](08-hooks-va-guardrails.md)

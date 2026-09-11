@@ -1,10 +1,10 @@
-# Chương 12 — Lộ trình & Case study
+# Chương 16 — Lộ trình & Case study
 
-> [← Chương 11](11-chon-cong-cu-ai.md) | [Mục lục](README.md) | [Phụ lục A →](A-phu-luc-cu-phap.md)
+> [← Chương 15](15-chon-cong-cu-ai.md) | [Mục lục](README.md) | [Phụ lục A →](A-phu-luc-cu-phap.md)
 
 ---
 
-## 12.1. Bảy cấp độ trưởng thành
+## 16.1. Bảy cấp độ trưởng thành
 
 Bảy cấp này mô tả quá trình đi từ dùng AI như một hộp thoại sang dùng AI như hạ tầng
 vận hành. Không ai nhảy cóc được, nhưng ai cũng có thể đi nhanh nếu biết bậc kế tiếp
@@ -35,14 +35,14 @@ Nhận ra kết quả đầu tiên chỉ là điểm bắt đầu.
 ```
 AI A tạo phương án → AI B phản biện → AI C nghiên cứu → Con người quyết định
 ```
-→ [Chương 08](08-subagents-va-song-song.md)
+→ [Chương 09](09-subagents-va-song-song.md)
 
 ### Cấp 5 — Quy trình tự động
 
 ```
 Trigger → AI → Công cụ → CSDL → Email → Hệ thống
 ```
-→ [Chương 10](10-automation-ngoai-codebase.md)
+→ [Chương 14](14-automation-ngoai-codebase.md)
 
 ### Cấp 6 — Agent
 
@@ -50,7 +50,7 @@ Trigger → AI → Công cụ → CSDL → Email → Hệ thống
 Mục tiêu → Agent tự lập kế hoạch → dùng công cụ → thực hiện nhiều bước
 → tự đánh giá → hoàn thành
 ```
-→ [Chương 04](04-workflow-plan-execute.md) đến [09](09-verification-feedback-loop.md)
+→ [Chương 05](05-workflow-plan-execute.md) đến [11](11-verification-feedback-loop.md)
 
 ### Cấp 7 — Hệ thống AI riêng
 
@@ -71,11 +71,11 @@ AI không còn là hộp thoại — nó là **hạ tầng vận hành**.
 | Có automation chạy khi bạn không ngồi máy | Cấp 7 |
 
 Cấp 6 là nơi lợi ích tăng vọt, và cũng là nơi hầu hết người dùng dừng lại vì bỏ qua
-[chương 09](09-verification-feedback-loop.md).
+[chương 11](11-verification-feedback-loop.md).
 
 ---
 
-## 12.2. Case study — sự cố Stored XSS trong Task Proposal
+## 16.2. Case study — sự cố Stored XSS trong Task Proposal
 
 Đây là một sự cố **có thật**, xảy ra ngày 19/08/2026 trong PM-AGENT. Nó đi qua gần như
 toàn bộ nội dung cuốn sách, nên đáng đọc kỹ.
@@ -122,7 +122,7 @@ Ba mắt xích mà chẩn đoán ban đầu bỏ sót:
 
 > **Bài học 1:** Nếu không có vòng phản biện độc lập, sự cố này đã được vá như một lỗi
 > CSS. Lỗ hổng vẫn còn nguyên, và không ai biết.
-> → [Chương 04, mục 4.4](04-workflow-plan-execute.md)
+> → [Chương 05, mục 5.4](05-workflow-plan-execute.md)
 
 ### Bước 3 — Tra cứu trước khi làm
 
@@ -162,7 +162,7 @@ Nếu viết assertion theo suy đoán, 11 test case đó đã sai ngay từ đ�
 tệ nhất: chúng sẽ được "sửa cho khớp code" ở bước sau.
 
 > **Bài học 4:** Kiểm chứng hành vi thư viện bằng thực nghiệm trước khi viết assertion.
-> → [Chương 02, mục 2.8](02-prompting-va-context.md) và [chương 09](09-verification-feedback-loop.md)
+> → [Chương 02, mục 2.8](02-prompting-va-context.md) và [chương 11](11-verification-feedback-loop.md)
 
 ### Bước 6 — Chạy test trên code CŨ trước
 
@@ -178,7 +178,7 @@ Hàm sửa lỗi dùng danh sách thẻ cho phép riêng: **bằng danh sách c�
 
 > **Bài học 6:** Kiểm quyết định cũ trước khi thay đổi. Sửa lỗi này mà mở lại lỗ hổng
 > kia là đi lùi.
-> → [Chương 04, mục 4.8](04-workflow-plan-execute.md)
+> → [Chương 05, mục 5.8](05-workflow-plan-execute.md)
 
 ### Bước 8 — Backfill dữ liệu cũ, có điều kiện an toàn
 
@@ -206,7 +206,7 @@ nghi log lẫn giữa các lần chạy (đúng một phần), và cuối cùng 
 
 > **Bài học 8:** Chạy lại để xác nhận, đừng tin kết quả cũ. Và khi gỡ lỗi, hãy kiểm
 > **giả định về môi trường** trước khi đi sâu vào logic.
-> → [Chương 09, mục 9.7](09-verification-feedback-loop.md)
+> → [Chương 11, mục 11.7](11-verification-feedback-loop.md)
 
 ### Bước 10 — Bốn commit nhỏ, không phải một commit lớn
 
@@ -217,7 +217,7 @@ nghi log lẫn giữa các lần chạy (đúng một phần), và cuối cùng 
 4. Script backfill
 ```
 
-→ [Chương 04, mục 4.5](04-workflow-plan-execute.md)
+→ [Chương 05, mục 5.5](05-workflow-plan-execute.md)
 
 ### Bước 11 — Đóng đúng quy trình, không tự ý
 
@@ -230,7 +230,7 @@ nghiệm thu trong spec, thêm mục CHANGELOG).
 
 > **Bài học 9:** "Test xanh" không phải "đã đóng". Cổng xác nhận của con người tồn tại
 > vì hai điều đó khác nhau.
-> → [Chương 07, mục 7.9](07-hooks-va-guardrails.md)
+> → [Chương 08, mục 8.9](08-hooks-va-guardrails.md)
 
 ### Kết quả
 
@@ -279,24 +279,24 @@ trị chuỗi cho mỗi key, không hỗ trợ danh sách.
 
 ---
 
-## 12.3. Mười lỗi thường gặp và cách sửa
+## 16.3. Mười lỗi thường gặp và cách sửa
 
 | # | Lỗi | Dấu hiệu | Cách sửa |
 |---|---|---|---|
-| 1 | Prompt khổng lồ một phát ăn ngay | Yêu cầu có 8 mục tiêu | Chia task, duyệt từng bước ([ch.04](04-workflow-plan-execute.md)) |
-| 2 | Không có ngữ cảnh dự án | Cùng câu dặn lặp ở mọi phiên | Dựng `CLAUDE.md` ([ch.03](03-context-engineering.md)) |
+| 1 | Prompt khổng lồ một phát ăn ngay | Yêu cầu có 8 mục tiêu | Chia task, duyệt từng bước ([ch.05](05-workflow-plan-execute.md)) |
+| 2 | Không có ngữ cảnh dự án | Cùng câu dặn lặp ở mọi phiên | Dựng `CLAUDE.md` ([ch.04](04-context-engineering.md)) |
 | 3 | `CLAUDE.md` phình to | Dài > 400 dòng | Tách `docs/` + rules, để lại con trỏ |
-| 4 | Bật quá nhiều MCP | Tool cả tháng không dùng | Bật theo dự án ([ch.06](06-tools-va-mcp.md)) |
-| 5 | Không có vòng phản hồi | AI nói "xong" mà không chạy gì | Trang bị test/log/ảnh chụp ([ch.09](09-verification-feedback-loop.md)) |
-| 6 | Test viết sau code | Test xanh nhưng tính năng hỏng | Test-first ([ch.09](09-verification-feedback-loop.md)) |
-| 7 | Lời dặn bị quên | Nhắc mãi vẫn sót | Chuyển thành hook ([ch.07](07-hooks-va-guardrails.md)) |
+| 4 | Bật quá nhiều MCP | Tool cả tháng không dùng | Bật theo dự án ([ch.07](07-tools-va-mcp.md)) |
+| 5 | Không có vòng phản hồi | AI nói "xong" mà không chạy gì | Trang bị test/log/ảnh chụp ([ch.11](11-verification-feedback-loop.md)) |
+| 6 | Test viết sau code | Test xanh nhưng tính năng hỏng | Test-first ([ch.11](11-verification-feedback-loop.md)) |
+| 7 | Lời dặn bị quên | Nhắc mãi vẫn sót | Chuyển thành hook ([ch.08](08-hooks-va-guardrails.md)) |
 | 8 | Giao quyết định nghiệp vụ cho AI | Kết quả không ổn định | Viết được `if/else` thì để cho code |
-| 9 | Subagent phá quyết định cũ | Nó "cải thiện" thứ cố tình để nguyên | Brief đầy đủ ràng buộc ([ch.08](08-subagents-va-song-song.md)) |
+| 9 | Subagent phá quyết định cũ | Nó "cải thiện" thứ cố tình để nguyên | Brief đầy đủ ràng buộc ([ch.09](09-subagents-va-song-song.md)) |
 | 10 | Tin lời tự báo cáo | "Đã xong" mà chưa ai chạy | Hỏi "kiểm chứng bằng cách nào?" |
 
 ---
 
-## 12.4. Lộ trình 30 ngày
+## 16.4. Lộ trình 30 ngày
 
 ### Tuần 1 — Nền móng
 
@@ -333,7 +333,7 @@ Ngày 29–30  Rà lại toàn bộ: cái gì đang dùng, cái gì bỏ, cái g
 
 ---
 
-## 12.5. Mô hình tư duy cuối cùng
+## 16.5. Mô hình tư duy cuối cùng
 
 ```
         MÔI TRƯỜNG LÀM VIỆC CỦA AI
@@ -373,7 +373,7 @@ Mục tiêu → Ngữ cảnh → Spec → Kế hoạch → Thực hiện → Ki�
 
 ---
 
-## 12.6. Ba câu chốt của cả cuốn sách
+## 16.6. Ba câu chốt của cả cuốn sách
 
 > **1.** Đừng chỉ bảo AI viết code. Hãy cho nó ngữ cảnh, công cụ, luật lệ và vòng phản
 > hồi để nó tự khám phá, lập kế hoạch, thực hiện, kiểm tra và cải thiện.
@@ -386,7 +386,7 @@ Mục tiêu → Ngữ cảnh → Spec → Kế hoạch → Thực hiện → Ki�
 
 ---
 
-## 12.7. Bài tập cuối
+## 16.7. Bài tập cuối
 
 **Bài 1 — Case study của chính bạn.**
 Chọn một sự cố đã xảy ra trong dự án của bạn. Viết lại theo khung của mục 12.2: bối

@@ -102,7 +102,7 @@ cd ../repo-feature-b && claude
 ```
 
 Kết hợp với `tmux` hoặc nhiều cửa sổ terminal. Xem
-[chương 08](08-subagents-va-song-song.md) về các bẫy khi làm song song.
+[chương 09](09-subagents-va-song-song.md) về các bẫy khi làm song song.
 
 ```bash
 # Dọn dẹp khi xong
@@ -234,7 +234,7 @@ Câu cuối cùng đáng dùng ở mọi task quan trọng.
 | Hook không chạy | Đường dẫn trong `settings.json` có **tuyệt đối** không; script có quyền chạy không |
 | Test "hỏng toàn bộ" ở giai đoạn setup | Có bỏ bớt cờ nào của lệnh gốc không |
 | Test kiểm CSDL nhưng không thấy dữ liệu | Có đang tra **đúng CSDL** không (test dùng DB riêng) |
-| AI quên lời dặn giữa phiên dài | Ngân sách context — xem [mục 3.7](03-context-engineering.md) |
+| AI quên lời dặn giữa phiên dài | Ngân sách context — xem [mục 4.7](04-context-engineering.md) |
 | Kết quả kém bất thường | Model đang dùng có đúng mức tối thiểu của quy trình không |
 
 > Tiếp: [Phụ lục C — Checklist](C-phu-luc-checklist.md)

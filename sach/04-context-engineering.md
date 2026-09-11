@@ -1,10 +1,10 @@
-# Chương 03 — Context Engineering
+# Chương 04 — Context Engineering
 
-> [← Chương 02](02-prompting-va-context.md) | [Mục lục](README.md) | [Chương 04 →](04-workflow-plan-execute.md)
+> [← Chương 03](03-dac-ta-yeu-cau.md) | [Mục lục](README.md) | [Chương 05 →](05-workflow-plan-execute.md)
 
 ---
 
-## 3.1. Vấn đề: kiến thức nằm trong đầu người
+## 4.1. Vấn đề: kiến thức nằm trong đầu người
 
 Một kỹ sư làm lâu trong dự án mang theo rất nhiều thứ trong đầu mà không viết ra đâu cả:
 
@@ -37,7 +37,7 @@ Cách 2 (đúng):  Ghi kiến thức vào môi trường làm việc, AI tự n�
 
 ---
 
-## 3.2. `CLAUDE.md` — sổ tay vận hành của dự án
+## 4.2. `CLAUDE.md` — sổ tay vận hành của dự án
 
 `CLAUDE.md` đặt ở gốc dự án (hoặc `.claude/CLAUDE.md`) được nạp tự động khi phiên bắt đầu.
 
@@ -76,7 +76,7 @@ CLAUDE.md = Blueprint + Sổ tay dự án + Bộ nhớ dài hạn
 
 ---
 
-## 3.3. Ví dụ thật — `CLAUDE.md` của PM-AGENT
+## 4.3. Ví dụ thật — `CLAUDE.md` của PM-AGENT
 
 File `.claude/CLAUDE.md` của PM-AGENT tổ chức theo các khối sau. Đây là bộ khung đáng
 sao chép cho dự án khác:
@@ -139,7 +139,7 @@ Bảng Skill Mapping biến câu "làm gì bây giờ" thành một tra cứu, t
 
 ---
 
-## 3.4. Ngữ cảnh phân cấp
+## 4.4. Ngữ cảnh phân cấp
 
 Ngữ cảnh không phải một file duy nhất. Nó xếp thành nhiều tầng, tầng hẹp hơn đè lên
 tầng rộng hơn:
@@ -184,7 +184,7 @@ của một người.
 
 ---
 
-## 3.5. Tách nhỏ rules thay vì một file khổng lồ
+## 4.5. Tách nhỏ rules thay vì một file khổng lồ
 
 PM-AGENT không nhét mọi luật vào `CLAUDE.md`. Nó tách thành 14 file, mỗi file một chủ đề:
 
@@ -232,7 +232,7 @@ lách khi thấy bất tiện. Có nó, luật trở thành lập luận có th�
 
 ---
 
-## 3.6. Memory — kiến thức tích luỹ qua các phiên
+## 4.6. Memory — kiến thức tích luỹ qua các phiên
 
 `CLAUDE.md` là kiến thức bạn chủ động viết. **Memory** là kiến thức đọng lại từ những
 lần vấp.
@@ -277,7 +277,7 @@ Nếu memory chép lại thứ repo đã có, nó sẽ lỗi thời và trở th
 
 ---
 
-## 3.7. Ngân sách context
+## 4.7. Ngân sách context
 
 Cửa sổ ngữ cảnh là tài nguyên có hạn, và nhiều thứ cùng tranh nhau chỗ:
 
@@ -313,7 +313,7 @@ Khi ngân sách bị tiêu hoang, triệu chứng rất đặc trưng: model b�
 
 ---
 
-## 3.8. Bảo mật ngữ cảnh: đừng để bí mật lọt vào
+## 4.8. Bảo mật ngữ cảnh: đừng để bí mật lọt vào
 
 Ngữ cảnh là thứ được gửi đi. Bất cứ gì lọt vào đó nên được coi là đã ra khỏi máy bạn.
 
@@ -343,7 +343,7 @@ Bài học tổng quát:
 
 ---
 
-## 3.9. Bẫy thường gặp
+## 4.9. Bẫy thường gặp
 
 > **Bẫy 1 — `CLAUDE.md` thành bãi rác.**
 > Mỗi lần AI làm sai, thêm một dòng cấm. Sau ba tháng file dài 900 dòng, mâu thuẫn
@@ -365,7 +365,7 @@ Bài học tổng quát:
 
 ---
 
-## 3.10. Bài tập
+## 4.10. Bài tập
 
 **Bài 1 — Dựng `CLAUDE.md` tối thiểu.**
 Viết một `CLAUDE.md` không quá 80 dòng cho dự án của bạn, gồm đúng sáu mục: dự án là
@@ -392,4 +392,4 @@ mục "Lý do" cho nó.
 - Ngân sách context có hạn: **đủ, đúng lúc, đúng việc** — không phải càng nhiều càng tốt.
 - Đừng để bí mật lọt vào ngữ cảnh: trích đúng trường cần, không đọc cả file cấu hình.
 
-> Chương tiếp: [04 — Workflow Plan → Execute](04-workflow-plan-execute.md)
+> Chương tiếp: [05 — Workflow: Plan → Review → Execute → Verify](05-workflow-plan-execute.md)

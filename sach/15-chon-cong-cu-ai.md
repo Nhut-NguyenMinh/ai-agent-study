@@ -1,10 +1,10 @@
-# Chương 11 — Chọn đúng công cụ AI
+# Chương 15 — Chọn đúng công cụ AI
 
-> [← Chương 10](10-automation-ngoai-codebase.md) | [Mục lục](README.md) | [Chương 12 →](12-lo-trinh-va-case-study.md)
+> [← Chương 14](14-automation-ngoai-codebase.md) | [Mục lục](README.md) | [Chương 16 →](16-lo-trinh-va-case-study.md)
 
 ---
 
-## 11.1. Sai lầm: chạy theo công cụ
+## 15.1. Sai lầm: chạy theo công cụ
 
 Mỗi tuần có công cụ AI mới. Phản xạ thường thấy:
 
@@ -28,7 +28,7 @@ phân loại bài toán thì bền.
 
 ---
 
-## 11.2. Năm lớp năng lực
+## 15.2. Năm lớp năng lực
 
 Thay vì học từng công cụ, nắm năm lớp năng lực. Bất kỳ công cụ mới nào cũng rơi vào
 một trong năm lớp này.
@@ -61,12 +61,12 @@ Chúng không rời rạc:
 ```
 
 Lớp 1 đã nói ở [chương 02](02-prompting-va-context.md); lớp 3 ở
-[chương 07](07-hooks-va-guardrails.md) và [chương 10](10-automation-ngoai-codebase.md).
+[chương 08](08-hooks-va-guardrails.md) và [chương 14](14-automation-ngoai-codebase.md).
 Chương này nói lớp 2, 4, 5.
 
 ---
 
-## 11.3. Ba nhóm công cụ
+## 15.3. Ba nhóm công cụ
 
 ### Nhóm A — General / Reasoning
 
@@ -86,7 +86,7 @@ Con người → quyết định
 ```
 
 Không cần trung thành với một model. Model thứ hai đọc phương án mà không mang theo lý
-do đã chọn nó — cùng cơ chế với subagent phản biện ở [chương 08](08-subagents-va-song-song.md).
+do đã chọn nó — cùng cơ chế với subagent phản biện ở [chương 09](09-subagents-va-song-song.md).
 
 ### Nhóm B — Research
 
@@ -115,7 +115,7 @@ Hãy hỏi:   "Công cụ nào được thiết kế cho bài toán này?"
 
 ---
 
-## 11.4. Kết nối AI với tri thức nội bộ
+## 15.4. Kết nối AI với tri thức nội bộ
 
 Một model tổng quát không biết gì về doanh nghiệp của bạn. Câu trả lời của nó sẽ đúng
 về mặt chung chung và vô dụng về mặt cụ thể.
@@ -141,12 +141,12 @@ AI + dữ liệu doanh nghiệp
     → trợ lý hiểu doanh nghiệp
 ```
 
-Đây chính là [Context Engineering](03-context-engineering.md) áp dụng ngoài phạm vi
+Đây chính là [Context Engineering](04-context-engineering.md) áp dụng ngoài phạm vi
 lập trình. Cùng một nguyên tắc, khác bối cảnh.
 
 ---
 
-## 11.5. Open source và local AI
+## 15.5. Open source và local AI
 
 Hai cách tiếp cận:
 
@@ -180,7 +180,7 @@ lâu dài và giảm độ trễ. Nhưng phải tính đủ: GPU, điện, máy 
 
 ---
 
-## 11.6. Vibe Coding
+## 15.6. Vibe Coding
 
 Thay đổi trong cách xây phần mềm:
 
@@ -236,12 +236,12 @@ Luôn:
 Xây → Chạy → Kiểm thử → Soi kết quả → Sửa → Kiểm thử lại
 ```
 
-Xem chi tiết ở [chương 09](09-verification-feedback-loop.md), đặc biệt bảy bẫy "test
+Xem chi tiết ở [chương 11](11-verification-feedback-loop.md), đặc biệt bảy bẫy "test
 xanh nhưng tính năng vẫn hỏng".
 
 ---
 
-## 11.7. Khung 7 câu hỏi ra quyết định
+## 15.7. Khung 7 câu hỏi ra quyết định
 
 Gặp bài toán mới, đi qua bảy câu này theo thứ tự:
 
@@ -255,7 +255,7 @@ Ngữ cảnh, dữ liệu, tài liệu tham chiếu, ràng buộc.
 Reasoning tổng quát? Nghiên cứu? Hình ảnh? Video? Giọng nói? Lập trình? Thiết kế?
 
 **4. Công việc có lặp lại không?**
-→ Có: cân nhắc automation ([chương 10](10-automation-ngoai-codebase.md)).
+→ Có: cân nhắc automation ([chương 14](14-automation-ngoai-codebase.md)).
 
 **5. Có cần AI tự quyết định nhiều bước không?**
 → Có: cân nhắc agent. → Không: một workflow theo luật sẽ ổn định hơn.
@@ -268,7 +268,7 @@ Reasoning tổng quát? Nghiên cứu? Hình ảnh? Video? Giọng nói? Lập t
 
 ---
 
-## 11.8. Năm sai lầm phổ biến
+## 15.8. Năm sai lầm phổ biến
 
 > **Sai lầm 1 — Chạy theo công cụ.**
 > Học liên tục nhưng không tạo ra kết quả. **Sửa:** học theo bài toán.
@@ -288,7 +288,7 @@ Reasoning tổng quát? Nghiên cứu? Hình ảnh? Video? Giọng nói? Lập t
 
 ---
 
-## 11.9. AI không thay thế "bộ não chính"
+## 15.9. AI không thay thế "bộ não chính"
 
 AI làm được: phân tích, viết, lập trình, nghiên cứu, đề xuất, tạo phương án.
 
@@ -311,7 +311,7 @@ so với vai "người trả lời".
 
 ---
 
-## 11.10. Bài tập
+## 15.10. Bài tập
 
 **Bài 1 — Phân loại công việc.**
 Liệt kê mười việc bạn dùng AI trong tháng qua. Xếp từng việc vào nhóm A/B/C. Có việc
@@ -341,4 +341,4 @@ Lấy một quyết định kỹ thuật đang phân vân. Hỏi model A đề x
 - Vibe Coding chuyển trọng tâm từ viết code sang **giải quyết vấn đề + đánh giá kết quả**.
 - Con người giữ vai trò **người đánh giá và người quyết định** — đó là vai không giao được.
 
-> Chương tiếp: [12 — Lộ trình & Case study](12-lo-trinh-va-case-study.md)
+> Chương tiếp: [16 — Lộ trình & Case study](16-lo-trinh-va-case-study.md)

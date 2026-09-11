@@ -1,6 +1,6 @@
 # Phụ lục A — Cú pháp & cấu hình
 
-> [← Chương 12](12-lo-trinh-va-case-study.md) | [Mục lục](README.md) | [Phụ lục B →](B-phu-luc-phim-tat-cli.md)
+> [← Chương 16](16-lo-trinh-va-case-study.md) | [Mục lục](README.md) | [Phụ lục B →](B-phu-luc-phim-tat-cli.md)
 
 > **Lưu ý:** cú pháp cấu hình của công cụ thay đổi theo phiên bản. Các mẫu dưới đây
 > lấy từ cấu hình đang chạy thật trong PM-AGENT tại thời điểm viết. Khi áp dụng, hãy đối

@@ -1,10 +1,10 @@
-# Chương 04 — Workflow: Plan → Review → Execute → Verify
+# Chương 05 — Workflow: Plan → Review → Execute → Verify
 
-> [← Chương 03](03-context-engineering.md) | [Mục lục](README.md) | [Chương 05 →](05-skills-va-slash-commands.md)
+> [← Chương 04](04-context-engineering.md) | [Mục lục](README.md) | [Chương 06 →](06-skills-va-slash-commands.md)
 
 ---
 
-## 4.1. Sai lầm kinh điển: một prompt khổng lồ
+## 5.1. Sai lầm kinh điển: một prompt khổng lồ
 
 ```
 "Xây cho tôi một CRM có: đăng nhập, phân quyền, database, REST API,
@@ -23,7 +23,7 @@ chuyện khác nhau — và bạn chỉ phát hiện ra điều đó sau khi đ�
 
 ---
 
-## 4.2. Chuỗi bảy bước
+## 5.2. Chuỗi bảy bước
 
 ```
 1. Understand   — hiểu yêu cầu thực sự là gì
@@ -115,11 +115,11 @@ Kế hoạch sai → sửa kế hoạch → mới cho code.
 
 ### Bước 5–7 — Implement, Test, Iterate
 
-Chi tiết ở [chương 09](09-verification-feedback-loop.md).
+Chi tiết ở [chương 11](11-verification-feedback-loop.md).
 
 ---
 
-## 4.3. Không có một workflow duy nhất
+## 5.3. Không có một workflow duy nhất
 
 Ép mọi việc vào cùng một quy trình là lãng phí. Chọn quy trình theo độ phức tạp và
 rủi ro:
@@ -138,7 +138,7 @@ nghi thức vô nghĩa khiến người ta bỏ quy trình luôn ở những lú
 
 ---
 
-## 4.4. Ví dụ thật — phân loại độ khó và vòng phản biện
+## 5.4. Ví dụ thật — phân loại độ khó và vòng phản biện
 
 PM-AGENT có luật `.claude/rules/{prefix}-critique-loop.md` biến ý "chọn workflow theo độ khó"
 thành bảng tra cứu:
@@ -191,7 +191,7 @@ nhắc gì, nên nó hỏi những câu bạn đã bỏ qua từ đầu.
 
 ---
 
-## 4.5. Chia nhỏ: giới hạn kích thước mỗi bước
+## 5.5. Chia nhỏ: giới hạn kích thước mỗi bước
 
 Kế hoạch tốt vẫn hỏng nếu mỗi bước quá lớn. PM-AGENT đặt giới hạn cứng
 (`.claude/rules/{prefix}-small-commits.md`):
@@ -247,7 +247,7 @@ Bốn commit thay vì một. Mỗi commit review được trong hai phút, rever
 
 ---
 
-## 4.6. Ví dụ thật — vòng đời đầy đủ của một feature trong PM-AGENT
+## 5.6. Ví dụ thật — vòng đời đầy đủ của một feature trong PM-AGENT
 
 Ghép tất cả lại, đây là quy trình bắt buộc cho mọi thay đổi code trong PM-AGENT:
 
@@ -286,11 +286,11 @@ feature-verify → [XÁC NHẬN ĐÓNG]
 ```
 
 Điểm cốt lõi: **test case được viết và duyệt TRƯỚC khi code**. Chi tiết vì sao ở
-[chương 09](09-verification-feedback-loop.md).
+[chương 11](11-verification-feedback-loop.md).
 
 ---
 
-## 4.7. Hai cổng dừng bắt buộc
+## 5.7. Hai cổng dừng bắt buộc
 
 Trong quy trình trên có hai chỗ AI phải dừng và chờ người:
 
@@ -305,7 +305,7 @@ dưới ô nhập"* và biết ngay đúng hay sai. Đó là chỗ AI và ngư�
 
 ---
 
-## 4.8. Kiểm quyết định cũ trước khi thay đổi
+## 5.8. Kiểm quyết định cũ trước khi thay đổi
 
 Một luật ít gặp nhưng cứu được nhiều lần (`.claude/rules/{prefix}-verify-before-change.md`):
 
@@ -329,11 +329,11 @@ Cả ba đều cùng một nguyên nhân: bỏ qua bước kiểm quyết địn
 
 **Khi giao việc cho subagent, luật này còn quan trọng hơn** — subagent không có lịch
 sử dự án, nên những gì đã chốt phải được viết thẳng vào prompt giao việc, nếu không nó
-sẽ vô tư phá vỡ. Chi tiết ở [chương 08](08-subagents-va-song-song.md).
+sẽ vô tư phá vỡ. Chi tiết ở [chương 09](09-subagents-va-song-song.md).
 
 ---
 
-## 4.9. Bẫy thường gặp
+## 5.9. Bẫy thường gặp
 
 > **Bẫy 1 — Kế hoạch quá mơ hồ để duyệt.**
 > "Bước 1: sửa service. Bước 2: cập nhật API." Kế hoạch này không duyệt được vì nó
@@ -352,7 +352,7 @@ sẽ vô tư phá vỡ. Chi tiết ở [chương 08](08-subagents-va-song-song.m
 
 ---
 
-## 4.10. Bài tập
+## 5.10. Bài tập
 
 **Bài 1 — Plan Mode lần đầu.**
 Chọn một tính năng cỡ vừa. Yêu cầu: *"Khám phá dự án, hiểu kiến trúc hiện tại, lập kế
@@ -384,4 +384,4 @@ Understand → Explore → Plan → [NGƯỜI DUYỆT] → Implement → Test �
 - Hai cổng dừng: **duyệt tài liệu test** và **xác nhận đóng**.
 - Kiểm quyết định cũ trước khi thay đổi; khi giao cho subagent thì phải viết ra.
 
-> Chương tiếp: [05 — Skills & Slash Commands](05-skills-va-slash-commands.md)
+> Chương tiếp: [06 — Skills & Slash Commands](06-skills-va-slash-commands.md)

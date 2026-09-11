@@ -1,10 +1,10 @@
-# Chương 10 — Automation ngoài codebase
+# Chương 14 — Automation ngoài codebase
 
-> [← Chương 09](09-verification-feedback-loop.md) | [Mục lục](README.md) | [Chương 11 →](11-chon-cong-cu-ai.md)
+> [← Chương 13](13-kinh-te-mo-hinh.md) | [Mục lục](README.md) | [Chương 15 →](15-chon-cong-cu-ai.md)
 
 ---
 
-## 10.1. Dấu hiệu bạn đang cần automation, không phải prompt tốt hơn
+## 14.1. Dấu hiệu bạn đang cần automation, không phải prompt tốt hơn
 
 Nếu công việc hằng ngày của bạn có chuỗi này:
 
@@ -26,7 +26,7 @@ bảng tính, CRM, lịch, thay vì với mã nguồn.
 
 ---
 
-## 10.2. Bốn cấp độ tự động hoá
+## 14.2. Bốn cấp độ tự động hoá
 
 | Cấp | Hình thức | Đặc điểm |
 |---|---|---|
@@ -51,7 +51,7 @@ rằng báo cáo đã được gửi cho đến khi ai đó hỏi vì sao tuần
 
 ---
 
-## 10.3. Routines — công việc định kỳ chạy trên cloud
+## 14.3. Routines — công việc định kỳ chạy trên cloud
 
 Routine là công việc lặp lại được chạy trên hạ tầng của nhà cung cấp, không phụ thuộc
 máy cá nhân.
@@ -109,10 +109,10 @@ hỏi cho người dùng. Nếu quy trình cần hỏi mới làm được thì 
 
 ---
 
-## 10.4. Ranh giới quan trọng nhất: deterministic và AI
+## 14.4. Ranh giới quan trọng nhất: deterministic và AI
 
 Đây là bài học lớn nhất của mảng automation, và nó lặp lại nguyên tắc ở
-[chương 07](07-hooks-va-guardrails.md) trong bối cảnh mới.
+[chương 08](08-hooks-va-guardrails.md) trong bối cảnh mới.
 
 ### Workflow xác định (deterministic)
 
@@ -155,7 +155,7 @@ cả hai đúng chỗ.
 
 ---
 
-## 10.5. Case study — tự động hoá hộp thư
+## 14.5. Case study — tự động hoá hộp thư
 
 Đây là ví dụ điển hình cho kiến trúc lai. Bối cảnh: một studio nhỏ, hộp thư lẫn lộn
 thư hỏi mua hàng, thư khiếu nại, thư cảm ơn, thư hỏi thông tin chung. Nhân viên xử lý
@@ -263,7 +263,7 @@ Trong quá trình thử nghiệm, AI phân loại sai một vài thư. Đây kh�
 
 ---
 
-## 10.6. Ép đầu ra có cấu trúc
+## 14.6. Ép đầu ra có cấu trúc
 
 Khi kết quả của AI đi tiếp vào máy móc, đừng nhận văn bản tự do.
 
@@ -293,7 +293,7 @@ Trường `confidence` mở ra một tầng an toàn rẻ tiền: dưới ngư�
 
 ---
 
-## 10.7. Con người vẫn ở trong vòng lặp
+## 14.7. Con người vẫn ở trong vòng lặp
 
 Với việc có rủi ro, thiết kế đúng là:
 
@@ -315,7 +315,7 @@ AI làm phần tốn thời gian (đọc, phân loại, tóm tắt). Người gi
 
 ---
 
-## 10.8. Gỡ lỗi là một phần của workflow
+## 14.8. Gỡ lỗi là một phần của workflow
 
 Đừng kỳ vọng ra lệnh một lần là có workflow hoàn hảo.
 
@@ -344,7 +344,7 @@ là một hệ thống chưa được kiểm thử.
 
 ---
 
-## 10.9. Checklist xây một automation
+## 14.9. Checklist xây một automation
 
 ### Trước khi xây
 
@@ -395,7 +395,7 @@ automation: bạn tin rằng việc đã được làm.
 
 ---
 
-## 10.10. Đừng đưa dữ liệu riêng tư lên nơi công khai
+## 14.10. Đừng đưa dữ liệu riêng tư lên nơi công khai
 
 Khi đưa dự án lên kho công khai hoặc gửi cho dịch vụ ngoài:
 
@@ -411,7 +411,7 @@ mục kể cả khi sau đó bạn xoá đi.
 
 ---
 
-## 10.11. Ba công thức đáng nhớ
+## 14.11. Ba công thức đáng nhớ
 
 **Công thức 1 — Xây tính năng**
 
@@ -433,7 +433,7 @@ Trigger → Logic xác định → AI nếu cần → Kiểm tra hợp lệ → 
 
 ---
 
-## 10.12. Bài tập
+## 14.12. Bài tập
 
 **Bài 1 — Tìm việc lặp lại.**
 Ghi lại một tuần làm việc. Đánh dấu mọi việc bạn làm nhiều hơn ba lần. Chọn việc tốn
@@ -462,4 +462,4 @@ Kiểm: nó có báo lỗi rõ ràng không, hay im lặng cho qua?
 - Gỡ lỗi là một phần của quy trình — kiểm thử cả đường thất bại.
 - Automation thất bại âm thầm còn tệ hơn không có automation.
 
-> Chương tiếp: [11 — Chọn đúng công cụ AI](11-chon-cong-cu-ai.md)
+> Chương tiếp: [15 — Chọn đúng công cụ AI](15-chon-cong-cu-ai.md)

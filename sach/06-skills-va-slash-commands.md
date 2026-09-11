@@ -1,10 +1,10 @@
-# Chương 05 — Skills & Slash Commands
+# Chương 06 — Skills & Slash Commands
 
-> [← Chương 04](04-workflow-plan-execute.md) | [Mục lục](README.md) | [Chương 06 →](06-tools-va-mcp.md)
+> [← Chương 05](05-workflow-plan-execute.md) | [Mục lục](README.md) | [Chương 07 →](07-tools-va-mcp.md)
 
 ---
 
-## 5.1. Vấn đề: giải thích lại quy trình lần thứ ba
+## 6.1. Vấn đề: giải thích lại quy trình lần thứ ba
 
 Bạn viết một đoạn hướng dẫn dài để AI làm đúng một loại việc. Nó làm tốt. Tuần sau
 việc đó quay lại, bạn viết lại đoạn hướng dẫn đó — lần này thiếu mất hai ý. Kết quả
@@ -23,7 +23,7 @@ suy giảm theo trí nhớ.
 
 ---
 
-## 5.2. Skill là gì
+## 6.2. Skill là gì
 
 Có thể hiểu skill như một **quy trình thao tác chuẩn (SOP)** viết cho AI:
 
@@ -54,7 +54,7 @@ lên những phiên không cần.
 
 ---
 
-## 5.3. Cấu trúc một skill
+## 6.3. Cấu trúc một skill
 
 Tối thiểu là một file `SKILL.md` với frontmatter:
 
@@ -114,7 +114,7 @@ và chúng rất dễ nhầm. Mỗi mô tả đều có một câu tự phân bi
 
 ---
 
-## 5.4. Ví dụ thật — giải phẫu skill `get-task`
+## 6.4. Ví dụ thật — giải phẫu skill `get-task`
 
 Skill `get-task` của PM-AGENT gói ba bước đầu của quy trình làm việc thành một lệnh:
 **nhận task → đọc ngữ cảnh → viết phân tích**. Nó minh hoạ đủ mọi thành phần của một
@@ -180,7 +180,7 @@ gọi API mười lần cho mười trạng thái.
 
 ---
 
-## 5.5. Slash command — biến workflow thành nút bấm
+## 6.5. Slash command — biến workflow thành nút bấm
 
 Slash command là lối vào ngắn cho một quy trình:
 
@@ -253,7 +253,7 @@ rõ trong chính tài liệu quy trình, không dựa vào việc AI tự đoán
 
 ---
 
-## 5.6. Rule, Skill hay Command — chọn cái nào
+## 6.6. Rule, Skill hay Command — chọn cái nào
 
 Ba cơ chế dễ nhầm. Bảng quyết định:
 
@@ -282,7 +282,7 @@ rule, bị quên nhiều lần, cuối cùng phải thành hook. Chương 07 nó
 
 ---
 
-## 5.7. Skill Mapping — ánh xạ loại việc sang quy trình
+## 6.7. Skill Mapping — ánh xạ loại việc sang quy trình
 
 Có nhiều skill rồi thì nảy sinh vấn đề mới: chọn cái nào. PM-AGENT giải quyết bằng một
 bảng tra trong `CLAUDE.md`:
@@ -320,7 +320,7 @@ ra spec và kế hoạch không ai cần.
 
 ---
 
-## 5.8. Cảnh báo model tối thiểu
+## 6.8. Cảnh báo model tối thiểu
 
 Chi tiết nhỏ nhưng đáng học. Nhiều skill của PM-AGENT mở đầu bằng:
 
@@ -340,7 +340,7 @@ Ba điều đáng học từ đoạn này:
 
 ---
 
-## 5.9. Bẫy thường gặp
+## 6.9. Bẫy thường gặp
 
 > **Bẫy 1 — Skill quá rộng.**
 > Một skill "làm mọi thứ liên quan đến task". Nó không bao giờ được gọi đúng lúc vì
@@ -364,7 +364,7 @@ Ba điều đáng học từ đoạn này:
 
 ---
 
-## 5.10. Bài tập
+## 6.10. Bài tập
 
 **Bài 1 — Tìm ứng viên.**
 Xem lại ba phiên gần nhất, tìm một quy trình bạn đã mô tả nhiều hơn một lần. Đó là
@@ -391,4 +391,4 @@ Mở phiên mới, nói một câu tự nhiên như khi cần skill đó. Nếu 
 - Có nhiều skill thì cần **bảng ánh xạ loại việc → quy trình**, và phải hỏi khi không
   phân loại được.
 
-> Chương tiếp: [06 — Tools & MCP](06-tools-va-mcp.md)
+> Chương tiếp: [07 — Tools & MCP](07-tools-va-mcp.md)

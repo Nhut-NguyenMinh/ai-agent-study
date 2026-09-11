@@ -1,10 +1,10 @@
-# Chương 09 — Verification & Feedback loop
+# Chương 11 — Verification & Feedback loop
 
-> [← Chương 08](08-subagents-va-song-song.md) | [Mục lục](README.md) | [Chương 10 →](10-automation-ngoai-codebase.md)
+> [← Chương 10](10-phoi-hop-da-tac-nhan.md) | [Mục lục](README.md) | [Chương 12 →](12-kinh-te-ngu-canh.md)
 
 ---
 
-## 9.1. Câu hỏi sai và câu hỏi đúng
+## 11.1. Câu hỏi sai và câu hỏi đúng
 
 Câu hỏi sai:
 
@@ -40,7 +40,7 @@ Vòng lặp này là thứ biến AI từ máy sinh code thành đồng nghiệp
 
 ---
 
-## 9.2. Cho AI phương tiện tự kiểm tra
+## 11.2. Cho AI phương tiện tự kiểm tra
 
 Đây là câu hỏi cần trả lời cho mọi lĩnh vực bạn làm việc:
 
@@ -64,7 +64,7 @@ AI *nhìn thấy* được kết quả của chính nó.
 
 ---
 
-## 9.3. Test-first: viết test trước khi viết code
+## 11.3. Test-first: viết test trước khi viết code
 
 Thứ tự thông thường (code trước, test sau) có một khiếm khuyết mang tính cấu trúc:
 
@@ -92,7 +92,7 @@ Lợi ích:
 
 ---
 
-## 9.4. Ví dụ thật — vòng đời test-first của PM-AGENT
+## 11.4. Ví dụ thật — vòng đời test-first của PM-AGENT
 
 Luật `.claude/rules/{prefix}-test-first.md` áp dụng cho **mọi task có thay đổi code**, trừ
 sửa lỗi chính tả, đổi tên biến, thêm chú thích và đổi config không đổi logic.
@@ -157,7 +157,7 @@ Sáu điều kiện, và không điều nào là "tôi thấy nó chạy đượ
 
 ---
 
-## 9.5. Chạy test ngay sau mỗi commit
+## 11.5. Chạy test ngay sau mỗi commit
 
 Luật này chống lại thói quen dồn test đến cuối:
 
@@ -182,7 +182,7 @@ cả nhóm bắt đầu bỏ qua màu đỏ. Đó là lúc bộ test chết.
 
 ---
 
-## 9.6. Ví dụ thật — kiểm chứng giao diện bằng ảnh chụp
+## 11.6. Ví dụ thật — kiểm chứng giao diện bằng ảnh chụp
 
 Test logic không bắt được lỗi bố cục. PM-AGENT có luật riêng
 (`.claude/rules/{prefix}-frontend-layout-verify.md`) cho việc này:
@@ -228,7 +228,7 @@ hình phải có wireframe + mục "Tiêu chí UI/UX" trong spec.
 
 ---
 
-## 9.7. Môi trường kiểm chứng phải nhất quán
+## 11.7. Môi trường kiểm chứng phải nhất quán
 
 Luật PM-AGENT: **browser test bắt buộc chạy trong Docker**, không chạy trực tiếp trên
 máy cá nhân.
@@ -248,7 +248,7 @@ bộ test.
 
 ---
 
-## 9.8. Bẫy: test xanh nhưng tính năng vẫn hỏng
+## 11.8. Bẫy: test xanh nhưng tính năng vẫn hỏng
 
 Đây là phần giá trị nhất của chương — những lỗi đã thực sự xảy ra trong PM-AGENT, nơi
 test xanh mà tính năng vẫn không dùng được.
@@ -294,7 +294,7 @@ Nó chỉ là bằng chứng những gì được kiểm thì đúng.
 
 ---
 
-## 9.9. Phân loại nguyên nhân khi test đỏ
+## 11.9. Phân loại nguyên nhân khi test đỏ
 
 Khi có test thất bại, phân loại trước rồi mới xử lý:
 
@@ -312,7 +312,7 @@ bắt buộc **báo trước khi sửa test case**.
 
 ---
 
-## 9.10. Nghi ngờ kết quả tự báo cáo
+## 11.10. Nghi ngờ kết quả tự báo cáo
 
 Nguyên tắc cuối, và có lẽ quan trọng nhất:
 
@@ -332,7 +332,7 @@ nhiều so với một câu "đã xong" trơn tru.
 
 ---
 
-## 9.11. Bài tập
+## 11.11. Bài tập
 
 **Bài 1 — Kiểm kê phương tiện phản hồi.**
 Liệt kê mọi cách AI có thể tự kiểm tra kết quả trong dự án của bạn. Cái nào chưa có mà
@@ -362,4 +362,4 @@ cả. Đối chiếu với bảy bẫy ở mục 9.8.
 - **Test xanh ≠ tính năng chạy được** — xem bảy bẫy ở mục 9.8.
 - "Đã xong" không phải bằng chứng; đầu ra của lệnh mới là.
 
-> Chương tiếp: [10 — Automation ngoài codebase](10-automation-ngoai-codebase.md)
+> Chương tiếp: [12 — Kinh tế ngữ cảnh: nạp có chiến lược, tảng băng, nén](12-kinh-te-ngu-canh.md)

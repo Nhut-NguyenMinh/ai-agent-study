@@ -1,6 +1,6 @@
 # Phụ lục E — Hướng dẫn viết `CLAUDE.md` hiệu quả
 
-> [← Phụ lục D](D-phu-luc-thuat-ngu.md) | [Mục lục](README.md) | Liên quan: [Chương 03](03-context-engineering.md)
+> [← Phụ lục D](D-phu-luc-thuat-ngu.md) | [Mục lục](README.md) | [Phụ lục F →](F-phu-luc-bang-quyet-dinh.md)
 
 > Bài này viết từ một góc nhìn khác với chương 03. Chương 03 nói `CLAUDE.md` **là gì**
 > và đặt ở đâu. Bài này nói **dòng nào thực sự đổi hành vi của AI, dòng nào bị bỏ qua,
@@ -190,8 +190,8 @@ code xung quanh.
 |---|---|---|
 | Mô tả cấu trúc thư mục cơ bản | AI đọc được bằng một lệnh | Bỏ hẳn |
 | Nguyên tắc lập trình phổ quát | Không loại trừ nhánh hành vi nào | Bỏ hẳn |
-| Quy trình dài cho một loại việc | Chỉ dùng khi làm loại việc đó | Skill / command ([ch.05](05-skills-va-slash-commands.md)) |
-| Lời dặn hay bị quên dù đã viết | Lời dặn không tự thực thi | Hook ([ch.07](07-hooks-va-guardrails.md)) |
+| Quy trình dài cho một loại việc | Chỉ dùng khi làm loại việc đó | Skill / command ([ch.06](06-skills-va-slash-commands.md)) |
+| Lời dặn hay bị quên dù đã viết | Lời dặn không tự thực thi | Hook ([ch.08](08-hooks-va-guardrails.md)) |
 | Đặc tả chi tiết một tính năng | Quá cụ thể, thay đổi thường xuyên | `docs/` + con trỏ |
 | Sở thích cá nhân của bạn | Người khác clone repo không cần | `~/.claude/CLAUDE.md` |
 
@@ -351,7 +351,7 @@ Hook do harness chạy
 Chặn cứng: phạm vi quyền, quyền file, CI gác cổng
 ```
 
-→ [Chương 07, mục 7.10](07-hooks-va-guardrails.md)
+→ [Chương 08, mục 8.10](08-hooks-va-guardrails.md)
 
 ---
 
@@ -562,4 +562,4 @@ Ba câu này lọc được phần lớn nội dung thừa trước khi nó lọ
   với thay đổi code.
 - Luật vẫn bị vi phạm sau khi đã viết rõ → leo thang: skill → hook → chặn cứng.
 
-> Về [Mục lục](README.md) | Đọc thêm: [Chương 03 — Context Engineering](03-context-engineering.md)
+> Về [Mục lục](README.md) | Đọc thêm: [Chương 04 — Context Engineering](04-context-engineering.md)

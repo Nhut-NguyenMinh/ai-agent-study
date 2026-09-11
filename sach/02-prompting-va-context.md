@@ -1,6 +1,6 @@
 # Chương 02 — Prompting & thu thập ngữ cảnh
 
-> [← Chương 01](01-tu-duy-nen-tang.md) | [Mục lục](README.md) | [Chương 03 →](03-context-engineering.md)
+> [← Chương 01](01-tu-duy-nen-tang.md) | [Mục lục](README.md) | [Chương 03 →](03-dac-ta-yeu-cau.md)
 
 ---
 
@@ -103,7 +103,7 @@ Câu trên khiến AI ưu tiên đường đi của dữ liệu chưa tin cậy,
 "Mỗi ý tối đa 3 câu."
 ```
 
-Định dạng quan trọng gấp bội khi đầu ra sẽ được máy khác đọc — xem [chương 10](10-automation-ngoai-codebase.md).
+Định dạng quan trọng gấp bội khi đầu ra sẽ được máy khác đọc — xem [chương 14](14-automation-ngoai-codebase.md).
 
 ### C — Context (bối cảnh)
 
@@ -374,5 +374,5 @@ Chạy lại và so sánh.
 - Đưa dữ liệu thật thay vì mô tả dữ liệu.
 - Không viết suy đoán như thể sự thật — khẳng định phải dẫn được `file:dòng`.
 
-> Chương tiếp: [03 — Context Engineering](03-context-engineering.md) — biến những gì
-> vừa học được ở đây thành file nằm trong repo, để không phải nói lại ở phiên sau.
+> Chương tiếp: [03 — Đặc tả yêu cầu](03-dac-ta-yeu-cau.md) — biết cách đưa đủ thông tin
+> rồi, bước tiếp theo là thống nhất **thế nào là xong** trước khi bắt tay.

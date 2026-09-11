@@ -1,6 +1,6 @@
 # Chương 01 — Tư duy nền tảng
 
-> [← Mục lục](README.md) | Chương tiếp: [02 — Prompting & thu thập ngữ cảnh](02-prompting-va-context.md)
+> [Mục lục](README.md) | [Chương 02 →](02-prompting-va-context.md)
 
 ---
 
@@ -91,7 +91,72 @@ Năm lỗi trên không sửa được bằng prompt hay hơn. Chúng sửa đư
 
 ---
 
-## 1.3. Prompt Engineering, Context Engineering, Agent Engineering
+## 1.3. Vòng lặp — thứ biến mô hình thành tác nhân
+
+Công thức ở mục 1.2 nói agent **cần gì**. Mục này nói agent **chạy như thế nào**.
+
+Một mô hình ngôn ngữ thuần tuý hoạt động theo một nhịp:
+
+```
+Yêu cầu → Câu trả lời
+```
+
+Một tác nhân hoạt động theo vòng:
+
+```
+┌─────────────────┐
+│    QUAN SÁT     │  Đọc yêu cầu, đọc file, đọc kết quả bước trước
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│    SUY NGHĨ     │  "Tôi cần làm gì tiếp theo?" — lập kế hoạch, chọn công cụ
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│   HÀNH ĐỘNG     │  Gọi công cụ, sửa file, chạy lệnh
+└────────┬────────┘
+         ↓
+    Nhận kết quả
+         │
+         └──────→ QUAN SÁT LẠI → SUY NGHĨ → HÀNH ĐỘNG → ...
+                                                          ↓
+                                                    HOÀN THÀNH
+```
+
+Đây là kiến thức nền quan trọng nhất của cả cuốn sách, vì nó giải thích **vì sao các
+chương sau tồn tại**:
+
+| Bước trong vòng lặp | Chương nói kỹ | Nếu bước này yếu thì |
+|---|---|---|
+| Quan sát | [02](02-prompting-va-context.md), [04](04-context-engineering.md), [12](12-kinh-te-ngu-canh.md) | AI làm việc trên thông tin sai hoặc thiếu |
+| Suy nghĩ | [03](03-dac-ta-yeu-cau.md), [05](05-workflow-plan-execute.md), [10](10-phoi-hop-da-tac-nhan.md) | AI đi sai hướng ngay từ kế hoạch |
+| Hành động | [07](07-tools-va-mcp.md), [08](08-hooks-va-guardrails.md) | AI chỉ nói lý thuyết, hoặc làm điều nguy hiểm |
+| Nhận kết quả | [11](11-verification-feedback-loop.md) | AI không biết mình vừa làm đúng hay sai |
+
+### Khi thất bại, vòng lặp mới là thứ cứu bạn
+
+```
+Thành công:  Hành động → Kết quả → Xong
+
+Thất bại:    Hành động → Lỗi
+                          ↓
+                      Quan sát lỗi
+                          ↓
+                       Suy nghĩ
+                          ↓
+                    Hành động khác
+```
+
+Nhánh thứ hai chỉ chạy được nếu AI **nhìn thấy** lỗi. Đó là lý do trang bị phương tiện
+tự kiểm chứng ([chương 11](11-verification-feedback-loop.md)) quan trọng hơn nhiều so
+với việc cố viết yêu cầu hoàn hảo ngay từ đầu.
+
+> **Tác nhân mạnh không phải vì đúng ngay lần đầu, mà vì lặp được chu trình
+> quan sát → suy nghĩ → hành động cho tới khi đạt mục tiêu.**
+
+---
+
+## 1.4. Prompt Engineering, Context Engineering, Agent Engineering
 
 Đây là insight quan trọng nhất của chương này.
 
@@ -114,7 +179,7 @@ lợi suất cao nhất thì rất rõ: sửa một prompt chỉ cứu được 
 
 ---
 
-## 1.4. Ví dụ thật — bốn thành phần trong PM-AGENT
+## 1.5. Ví dụ thật — bốn thành phần trong PM-AGENT
 
 PM-AGENT là dự án middleware quản lý dự án (FastAPI + PostgreSQL + HTMX). Hạ tầng agent
 của nó có đủ bốn thành phần, và mỗi thành phần nằm ở một chỗ khác nhau:
@@ -154,7 +219,7 @@ nằm trong repo**, đọc được, sửa được, review được, và đi c�
 
 ---
 
-## 1.5. Bảy nguyên tắc gốc
+## 1.6. Bảy nguyên tắc gốc
 
 Bảy nguyên tắc này là bản rút gọn của cả cuốn sách. Mỗi nguyên tắc có một chương triển khai.
 
@@ -165,12 +230,12 @@ Sai:  Yêu cầu → Code ngay
 Đúng: Yêu cầu → Khám phá → Hiểu → Lập kế hoạch → Code
 ```
 
-Chi tiết ở [chương 04](04-workflow-plan-execute.md).
+Chi tiết ở [chương 05](05-workflow-plan-execute.md).
 
 ### Nguyên tắc 2 — Ngữ cảnh quan trọng hơn prompt
 
 Một prompt trung bình trên nền ngữ cảnh tốt cho kết quả tốt hơn một prompt xuất sắc
-trên nền ngữ cảnh trống. Chi tiết ở [chương 03](03-context-engineering.md).
+trên nền ngữ cảnh trống. Chi tiết ở [chương 04](04-context-engineering.md).
 
 ### Nguyên tắc 3 — Việc lớn phải có kế hoạch được duyệt
 
@@ -185,7 +250,7 @@ Duyệt một kế hoạch mất năm phút. Đọc lại 800 dòng code sai hư
 Câu hỏi sai: *"Làm sao viết prompt để AI đúng ngay lần đầu?"*
 Câu hỏi đúng: *"Làm sao để AI tự phát hiện là nó sai?"*
 
-Chi tiết ở [chương 09](09-verification-feedback-loop.md).
+Chi tiết ở [chương 11](11-verification-feedback-loop.md).
 
 ### Nguyên tắc 5 — Không giao mọi thứ cho AI quyết định
 
@@ -195,7 +260,7 @@ Hệ thống    → phần cần chính xác tuyệt đối, lặp lại đượ
 ```
 
 Nếu logic viết được thành `if / else` thì nó thuộc về code, không thuộc về AI.
-Chi tiết ở [chương 07](07-hooks-va-guardrails.md) và [chương 10](10-automation-ngoai-codebase.md).
+Chi tiết ở [chương 08](08-hooks-va-guardrails.md) và [chương 14](14-automation-ngoai-codebase.md).
 
 ### Nguyên tắc 6 — Hành động rủi ro phải qua cổng kiểm soát
 
@@ -210,7 +275,7 @@ là **hệ thống làm việc**. Mục tiêu là cái thứ hai.
 
 ---
 
-## 1.6. Ba câu hỏi tự kiểm trước mỗi task
+## 1.7. Ba câu hỏi tự kiểm trước mỗi task
 
 Trước khi gõ yêu cầu đầu tiên cho AI, tự trả lời ba câu:
 
@@ -228,7 +293,7 @@ Ba câu này ánh xạ đúng vào Context, Feedback và Validation.
 
 ---
 
-## 1.7. Bẫy thường gặp ở giai đoạn đầu
+## 1.8. Bẫy thường gặp ở giai đoạn đầu
 
 | Bẫy | Dấu hiệu nhận biết | Chương xử lý |
 |---|---|---|
@@ -241,7 +306,7 @@ Ba câu này ánh xạ đúng vào Context, Feedback và Validation.
 
 ---
 
-## 1.8. Bài tập
+## 1.9. Bài tập
 
 **Bài 1 — Chấm điểm môi trường hiện tại.**
 Với dự án bạn đang làm, điền bảng sau. Ô nào trống chính là chương bạn nên đọc trước.
